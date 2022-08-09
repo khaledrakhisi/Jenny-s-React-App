@@ -1,0 +1,33 @@
+body {
+  background-color: #ddf;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.watched {
+	margin: 0 auto;
+	width: 30%;
+}
+
+.span {
+	float: left;
+}
+
+img {
+	border-right: 60px solid black;
+	border-left: 60px solid black;
+}
+
+.all {
+	margin: 0 auto;
+	width: 30%;
+}
