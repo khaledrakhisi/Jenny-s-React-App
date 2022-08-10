@@ -1,86 +1,94 @@
-## JS/React app cleanup
+## وَكَانَ فَضْلُ اللَّهِ عَلَيْكَ عَظِيمًا - 113 سورة النساء
 
-Jenny is a newbie developer that has decided to learn Javascript and React. She wrote this simple application to keep track of which movies she wants to see, and which ones she has seen.
+# Jenny's app
 
-She knows it is not great, and she has now asked you to take a look at it, to give feedback and pointers. She also wants to see how she could have done it in a better way.
+App to keep track of your movie list
 
-### Your task:
+## Description
 
-1. **Create a git repo using this code.**
-2. **Add one commit with in-code comments, pointing out any bad patterns or strange choices made.**
-3. **Add any number of commits to make the application maintainable and better looking.**
-4. **Add any relevant instructions to run the app in the README.**
-5. **Push code to any git hosting providers like github or gitlab. Share the repo with us.**
+The app has following specifications:
+- Tests
+- Sorting
+- No duplicate
+- No third-party design-systems used
+- Local storage
 
-Do not spend more than two hours on this assignment. Keep it simple!
+## Getting Started
 
----
+## Tech Stack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+<a href="https://reactjs.org/" title="React"><img src="https://github.com/get-icon/geticon/raw/master/icons/react.svg" alt="React" width="64px" height="64px"></a>
+<a href="https://git-scm.com/" title="Git"><img src="https://github.com/get-icon/geticon/raw/master/icons/git-icon.svg" alt="Git" width="64px" height="64px"></a>
+<a href="https://yarnpkg.com/" title="Yarn"><img src="https://github.com/get-icon/geticon/raw/master/icons/yarn.svg" alt="Yarn" width="64px" height="64px"></a>
+<a href="https://eslint.org/" title="ESLint"><img src="https://github.com/get-icon/geticon/raw/master/icons/eslint.svg" alt="ESLint" width="64px" height="64px"></a>
+<a href="https://prettier.io/" title="Prettier"><img src="https://github.com/get-icon/geticon/raw/master/icons/prettier.svg" alt="Prettier" width="64px" height="64px"></a>
+<a href="https://testing-library.com/docs/react-testing-library/intro/" title="React-Testing-Library"><img src="https://raw.githubusercontent.com/testing-library/react-testing-library/main/other/goat.png" alt="React-Testing-Library" width="64px" height="64px"></a>
+<a href="https://code.visualstudio.com/" title="Visual Studio Code"><img src="https://github.com/get-icon/geticon/raw/master/icons/visual-studio-code.svg" alt="Visual Studio Code" width="64px" height="64px"></a>
+</div>
 
-## Available Scripts
+## wireframes
 
-In the project directory, you can run:
+## Demo
 
-### `npm start`
+### Live Demo
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+No live demo
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Demo photos
 
-### `npm test`
+![Demo snapshot #1](./public/demo1.png)
+![Demo snapshot #2](./public/demo2.png)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Styles and Design system
 
-### `npm run build`
+Just SASS (Mobile-First approach).
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installing Dependencies
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+yarn
+```
 
-### `npm run eject`
+### Build & Run
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm run build
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+yarn build
+yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Tests
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Unit/Integration Test
+  - Run `yarn test` to execute the unit tests.
 
-## Learn More
+## Help
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+In case of any issues please reach out to me at: info@khaledr.ir
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Authors
 
-### Code Splitting
+[Khaled Rakhisi](https://www.linkedin.com/in/khaledrakhisi/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## License
 
-### Analyzing the Bundle Size
+This project is licensed under the [Khaled Rakhisi] License - see the LICENSE.md file for details
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Acknowledgments
 
-### Making a Progressive Web App
+Inspiration, code snippets, etc.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [awesome-readme](https://github.com/matiassingers/awesome-readme)
+- [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+- [dbader](https://github.com/dbader/readme-template)
+- [zenorocha](https://gist.github.com/zenorocha/4526327)
+- [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)

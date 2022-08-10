@@ -17,7 +17,11 @@ export const MoviesList = ({ movies, onClick, listType }) => {
           return 0;
         })
         .map((movie) => (
-          <div key={movie.title} className={classes.movieitem}>
+          <div
+            key={movie.title}
+            className={classes.movieitem}
+            data-testid="movie_item"
+          >
             <img src={movie.image} alt={movie.title} />
             <div className={classes.titlearea}>
               <div

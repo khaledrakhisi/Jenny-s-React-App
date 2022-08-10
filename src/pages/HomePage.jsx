@@ -133,7 +133,6 @@ export const HomePage = () => {
       </form>
 
       <h1>Watchlist:</h1>
-      {/* {getMoviesComponents(getAllMovies())} */}
       {watchList && (
         <MoviesList
           movies={watchList}
@@ -143,7 +142,6 @@ export const HomePage = () => {
       )}
 
       <h1>Already watched:</h1>
-      {/* {getWatchedMoviesComponents(getWatchedMovies())} */}
       {watchedAlreadyList && (
         <MoviesList
           movies={watchedAlreadyList}
