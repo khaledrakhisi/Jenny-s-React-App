@@ -1,0 +1,13 @@
+.homepage {
+  width: 100%;
+}
+
+.forminput {
+  display: flex;
+}
+
+.forminput .field {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+}
