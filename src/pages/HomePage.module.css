@@ -2,12 +2,18 @@
   width: 100%;
 }
 
-.forminput {
+.form_container {
   display: flex;
 }
 
-.forminput .field {
+.form_container .field {
   display: flex;
   flex-direction: column;
   font-weight: bold;
+  margin: 10px 10px 0;
+}
+
+.form_container .submit {
+  height: 30px;
+  align-self: flex-end;
 }

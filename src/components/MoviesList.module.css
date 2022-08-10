@@ -34,6 +34,8 @@
   height: 100px;
   padding: 5px;
   overflow: hidden;
+  border-radius: 7px;
+  padding: 10px;
 }
 
 .title {

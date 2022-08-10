@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from "./MoviesList.module.css";
 
-export const MoviesList = ({ movies }) => {
+export const MoviesList = ({ movies, onClick, listType }) => {
   //Instead of forach and pushing to new array we should use .map method
   return (
     <div className={classes.container}>
@@ -13,8 +13,8 @@ export const MoviesList = ({ movies }) => {
           <div className={classes.titlearea}>
             <div
               className={classes.title}
-              onClick={function () {
-                // removeWatchedMovie(movie.title);
+              onClick={() => {
+                onClick(listType, movie);
               }}
             >
               {movie.title}
