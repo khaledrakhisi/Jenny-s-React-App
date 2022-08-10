@@ -1,7 +1,8 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import { getAllMovies } from "../api/mock-api";
 import { MoviesList } from "../components/MoviesList";
+import { config } from "../config/config";
 import { MoviesContext } from "../context/movies-context";
+import { MOCK_DATA } from "../data/data";
 
 import classes from "./HomePage.module.css";
 
@@ -10,8 +11,11 @@ export const HomePage = () => {
     watchList,
     setWatchList,
     addOneToWatchList,
+    removeOneFromWatchList,
     watchedAlreadyList,
+    setWatchedAlreadyList,
     addOneToWatchedAlreadyList,
+    removeOneFromWatchAlreadyList,
   } = useContext(MoviesContext);
 
   const [inputs, setInputs] = useState({
@@ -22,15 +26,23 @@ export const HomePage = () => {
 
   /**
    *
-   * Fetching data from MOCK API
+   *In here the data will be loaded from local storage and if no data is exist, default will be in the watch list
    */
   useEffect(() => {
-    const fetch_data = async () => {
-      const response = await getAllMovies();
-      setWatchList(response);
-    };
-    fetch_data();
-  }, [setWatchList]);
+    const localstorageWatchMovies = JSON.parse(
+      localStorage.getItem(config.watchListName)
+    );
+    const localstorageWatchedMovies = JSON.parse(
+      localStorage.getItem(config.watchedListName)
+    );
+
+    setWatchList(localstorageWatchMovies);
+    setWatchedAlreadyList(localstorageWatchedMovies);
+
+    if (!localstorageWatchMovies || localstorageWatchMovies.length === 0) {
+      setWatchList(MOCK_DATA);
+    }
+  }, [setWatchList, setWatchedAlreadyList]);
 
   // This function moved from inside of input to here to be shared among all inputs
   const inputChangeHandler = useCallback(
@@ -49,19 +61,34 @@ export const HomePage = () => {
   const formSubmitHandler = useCallback(
     (e) => {
       e.preventDefault();
-      addOneToWatchList(inputs.title, inputs.image, inputs.comment);
+
+      if (addOneToWatchList(inputs.title, inputs.image, inputs.comment)) {
+        setInputs({ title: "", image: "", comment: "" });
+      } else {
+        alert("Already exist!");
+      }
     },
     [inputs.title, inputs.image, inputs.comment, addOneToWatchList]
   );
 
-  const watchListClickHandle = useCallback(
+  const itemClickHandle = useCallback(
     (listType, { title, image, comment }) => {
       if (listType === "watch") {
-        addOneToWatchedAlreadyList(title, image, comment);
+        if (!addOneToWatchedAlreadyList(title, image, comment)) {
+          alert(
+            "This movie exist in wached list, anyway its going to be deleted."
+          );
+        }
+        removeOneFromWatchList(title);
       } else if (listType === "watched") {
+        removeOneFromWatchAlreadyList(title);
       }
     },
-    [addOneToWatchedAlreadyList]
+    [
+      addOneToWatchedAlreadyList,
+      removeOneFromWatchList,
+      removeOneFromWatchAlreadyList,
+    ]
   );
 
   return (
@@ -110,18 +137,20 @@ export const HomePage = () => {
       {watchList && (
         <MoviesList
           movies={watchList}
-          onClick={watchListClickHandle}
+          onClick={itemClickHandle}
           listType="watch"
         />
       )}
 
       <h1>Already watched:</h1>
       {/* {getWatchedMoviesComponents(getWatchedMovies())} */}
-      <MoviesList
-        movies={watchedAlreadyList}
-        onClick={watchListClickHandle}
-        listType="watched"
-      />
+      {watchedAlreadyList && (
+        <MoviesList
+          movies={watchedAlreadyList}
+          onClick={itemClickHandle}
+          listType="watched"
+        />
+      )}
     </section>
   );
 };

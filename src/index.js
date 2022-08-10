@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { MoviesContextProvider } from "./context/movies-context";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
-  <MoviesContextProvider>
-    <App />
-  </MoviesContextProvider>,
+  <BrowserRouter>
+    <MoviesContextProvider>
+      <App />
+    </MoviesContextProvider>
+  </BrowserRouter>,
   document.getElementById("root")
 );
