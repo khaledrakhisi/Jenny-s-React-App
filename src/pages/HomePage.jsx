@@ -92,6 +92,11 @@ export const HomePage = () => {
     ]
   );
 
+  /**
+   *
+   * Always try to use Semantic-HTML. Html tags which are understandable both by user and the browser called demantic elements.
+   * It also good for readablity and SEO improvmens.
+   */
   return (
     <section className={classes.homepage}>
       <h1>Codest Movies!</h1>
@@ -130,7 +135,6 @@ export const HomePage = () => {
             type="text"
             value={inputs.comment}
             onChange={inputChangeHandler}
-            required
           />
         </div>
         <input className={classes.submit} type="submit" value="ADD MOVIE" />

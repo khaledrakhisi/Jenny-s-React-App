@@ -4,6 +4,7 @@ import classes from "./MoviesList.module.scss";
 
 export const MoviesList = ({ movies, onClick, listType }) => {
   //Instead of foreach and pushing to new array we should use .map method
+
   return (
     <ul className={classes.container}>
       {/* using ES6 js */}
@@ -20,20 +21,20 @@ export const MoviesList = ({ movies, onClick, listType }) => {
         .map((movie) => (
           <li
             key={movie.title}
-            className={classes.container__movieitem}
+            className={classes.movieitem}
             data-testid="movie_item"
           >
             <img src={movie.image} alt={movie.title} />
-            <div className={classes.container__movieitem__titlearea}>
-              <div
-                className={classes.container__movieitem__titlearea__title}
+            <div className={classes.movieitem__titlearea}>
+              <h4
+                className={classes.movieitem__titlearea__title}
                 onClick={() => {
                   onClick(listType, movie);
                 }}
               >
                 {movie.title}
-              </div>
-              <p className={classes.container__movieitem__titlearea__comment}>
+              </h4>
+              <p className={classes.movieitem__titlearea__comment}>
                 {movie.comment}
               </p>
             </div>
