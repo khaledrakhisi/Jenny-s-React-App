@@ -8,10 +8,11 @@ export const MoviesList = ({ movies, onClick, listType }) => {
     <div className={classes.container}>
       {/* using ES6 js */}
       {movies
+        // Sorting takes place here
         .sort((item1, item2) => {
-          if (item1.title > item2.title) {
+          if (item1.title.toLowerCase() > item2.title.toLowerCase()) {
             return 1;
-          } else if (item1.title < item2.title) {
+          } else if (item1.title.toLowerCase() < item2.title.toLowerCase()) {
             return -1;
           }
           return 0;

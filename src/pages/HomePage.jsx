@@ -133,21 +133,28 @@ export const HomePage = () => {
       </form>
 
       <h1>Watchlist:</h1>
-      {watchList && (
+      {watchList ? (
         <MoviesList
           movies={watchList}
           onClick={itemClickHandle}
           listType="watch"
         />
+      ) : (
+        <p>List is empty </p>
       )}
 
       <h1>Already watched:</h1>
-      {watchedAlreadyList && (
+      {watchedAlreadyList ? (
         <MoviesList
           movies={watchedAlreadyList}
           onClick={itemClickHandle}
           listType="watched"
         />
+      ) : (
+        <p>
+          whated list also is empty. click on movie title above to add to this
+          list
+        </p>
       )}
     </section>
   );

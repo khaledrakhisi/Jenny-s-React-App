@@ -1,4 +1,5 @@
-/* Better approach is to use SASS */
+/* Better approach is to use SASS 
+*/
 
 body {
   background-color: #ddf;
@@ -14,23 +15,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.watched {
-  margin: 0 auto;
-  width: 30%;
-}
-
-.span {
-  float: left;
-}
-
-img {
-  /* border-right: 60px solid black; */
-  /* border-left: 60px solid black; */
-}
-
-.all {
-  margin: 0 auto;
-  width: 30%;
 }
