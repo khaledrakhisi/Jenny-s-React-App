@@ -1,0 +1,34 @@
+@use "../scss/abstracts/" as *;
+
+.homepage {
+  width: 100%;
+  @include flex(column, flex-start, flex-start);
+
+  & > h1 {
+    align-self: center;
+    margin: $mediumSpacing;
+    color: $primaryColor;
+  }
+
+  & > h2 {
+    color: $secondaryColor;
+  }
+
+  &__form_container {
+    @include flex();
+    align-self: center;
+    margin: $largeSpacing;
+
+    & > .field {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+      margin: $mediumSpacing $mediumSpacing 0;
+    }
+
+    & > .submit {
+      height: 30px;
+      align-self: flex-end;
+    }
+  }
+}

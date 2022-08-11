@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { cleanup, fireEvent, render, waitFor } from "@testing-library/react";
 
@@ -26,6 +26,36 @@ test("if it renders without crashing", async () => {
 
   expect(getByText(/Codest Movies!/i)).toBeInTheDocument();
   expect(getByText(/Already watched:/i)).toBeInTheDocument();
+});
+
+test("if it adds new item as expected", () => {
+  const { getAllByTestId, getAllByRole, getByText } = renderComponent();
+
+  // Checking the existing movies before adding new item
+  const beforeAddingTotal = getAllByTestId("movie_item").length;
+
+  // Targeting inputs
+  const inputs = getAllByRole("textbox");
+
+  // Checking if the inputs are relevant as expected
+  expect(inputs[0].id).toBe("title");
+  expect(inputs[1].id).toBe("image");
+  expect(inputs[2].id).toBe("comment");
+
+  // Targeting submit button
+  const submit = getAllByRole("button")[0];
+
+  // Enter some value into the textboxes
+  fireEvent.change(inputs[0], { target: { value: "Movie title" } });
+  fireEvent.change(inputs[1], { target: { value: "Movie Image" } });
+  fireEvent.change(inputs[2], { target: { value: "Movie comment" } });
+  // Add new item
+  fireEvent.click(submit);
+
+  // Checking the existing movies before adding new item
+  const afterAddingTotal = getAllByTestId("movie_item").length;
+
+  expect(afterAddingTotal).toBeGreaterThan(beforeAddingTotal);
 });
 
 test("if it prevent duplicate item to be added as expected", () => {

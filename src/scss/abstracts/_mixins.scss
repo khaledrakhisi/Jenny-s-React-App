@@ -1,0 +1,42 @@
+@use './variables' as *;
+
+@mixin flex($flexDirection: row, $justifyContent: center, $alignItem: center) {
+  display: flex;
+  flex-direction: $flexDirection;
+  align-items: $alignItem;
+  justify-content: $justifyContent;
+}
+
+@mixin overflowEllipses($maxLines: 3){
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $maxLines;
+  -webkit-box-orient: vertical;
+}
+
+@mixin mobile {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin animate($animation, $duration: 400ms, $method: ease, $times: 1){
+  animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name){
+  @keyframes #{$name}{
+      @content;
+  }
+}
+
+@mixin trans($str) {
+  transition: #{$str};
+  -webkit-transition: #{$str};
+}

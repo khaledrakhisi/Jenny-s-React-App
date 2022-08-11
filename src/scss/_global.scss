@@ -1,0 +1,66 @@
+@use "./abstracts/" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+
+  // Always set box-sinzing to prevent unexpected sizing issues
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+::placeholder {
+  color: $text-color-disabled;
+}
+
+//general styles
+body {
+  background: $bg;
+
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+//$-------- scrollbar styles
+::-webkit-scrollbar {
+  display: none;
+
+  @include tablet {
+    display: unset;
+    width: 0.5rem;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $primaryColor;
+  border-radius: 100vw;
+}

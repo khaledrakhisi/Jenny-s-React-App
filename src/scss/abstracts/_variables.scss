@@ -1,0 +1,27 @@
+/* Color Palette */
+$primaryColor: #2483f0;
+$secondaryColor: #00a36e;
+
+$bg: #ddf 0% 0% no-repeat padding-box;
+$card-bgc: #f0f0f3;
+$dark-bg: #0d455d;
+$text-color: #ffffff;
+$text-color-disabled: #d1d1d1;
+
+/* ****Font family**** */
+$fontFamily: "Roboto", Arial, Helvetica, sans-serif;
+
+/* ****Border radius**** */
+$mediumBorderRadius: 7px; //for boxes
+
+/* ****Spacing **** */
+$smallSpacing: 8px;
+$mediumSpacing: 10px;
+$largeSpacing: 24px;
+
+/* **** Device width **** */
+//This design is mobile first
+$mobile-width: 576px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+$largeDesktop-width: 1200px;

@@ -1,11 +1,11 @@
 import React from "react";
 
-import classes from "./MoviesList.module.css";
+import classes from "./MoviesList.module.scss";
 
 export const MoviesList = ({ movies, onClick, listType }) => {
   //Instead of foreach and pushing to new array we should use .map method
   return (
-    <div className={classes.container}>
+    <ul className={classes.container}>
       {/* using ES6 js */}
       {movies
         // Sorting takes place here
@@ -18,25 +18,27 @@ export const MoviesList = ({ movies, onClick, listType }) => {
           return 0;
         })
         .map((movie) => (
-          <div
+          <li
             key={movie.title}
-            className={classes.movieitem}
+            className={classes.container__movieitem}
             data-testid="movie_item"
           >
             <img src={movie.image} alt={movie.title} />
-            <div className={classes.titlearea}>
+            <div className={classes.container__movieitem__titlearea}>
               <div
-                className={classes.title}
+                className={classes.container__movieitem__titlearea__title}
                 onClick={() => {
                   onClick(listType, movie);
                 }}
               >
                 {movie.title}
               </div>
-              <p className={classes.comment}>{movie.comment}</p>
+              <p className={classes.container__movieitem__titlearea__comment}>
+                {movie.comment}
+              </p>
             </div>
-          </div>
+          </li>
         ))}
-    </div>
+    </ul>
   );
 };

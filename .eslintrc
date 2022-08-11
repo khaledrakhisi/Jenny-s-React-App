@@ -1,16 +1,12 @@
 {
-    "parser":  "@typescript-eslint/parser",
     "extends": [
       "react-app",
       "eslint:recommended"
     ],
     "plugins": [
       "simple-import-sort",
-      "cypress"
     ],
-    "env": {
-      "cypress/globals": true
-    },
+    
     "rules": {     
       "no-unused-vars": "off",
       "max-len": "off",

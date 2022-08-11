@@ -1,10 +1,11 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
+
 import { MoviesList } from "../components/MoviesList";
 import { config } from "../config/config";
 import { MoviesContext } from "../context/movies-context";
 import { MOCK_DATA } from "../data/data";
 
-import classes from "./HomePage.module.css";
+import classes from "./HomePage.module.scss";
 
 export const HomePage = () => {
   const {
@@ -94,8 +95,11 @@ export const HomePage = () => {
   return (
     <section className={classes.homepage}>
       <h1>Codest Movies!</h1>
-      <h1>Add movie!</h1>
-      <form className={classes.form_container} onSubmit={formSubmitHandler}>
+      <h2>Add movie!</h2>
+      <form
+        className={classes.homepage__form_container}
+        onSubmit={formSubmitHandler}
+      >
         <div className={classes.field}>
           <label htmlFor="title">TITLE:</label>
           <input
@@ -132,7 +136,7 @@ export const HomePage = () => {
         <input className={classes.submit} type="submit" value="ADD MOVIE" />
       </form>
 
-      <h1>Watchlist:</h1>
+      <h2>Watchlist:</h2>
       {watchList ? (
         <MoviesList
           movies={watchList}
@@ -143,7 +147,7 @@ export const HomePage = () => {
         <p>List is empty </p>
       )}
 
-      <h1>Already watched:</h1>
+      <h2>Already watched:</h2>
       {watchedAlreadyList ? (
         <MoviesList
           movies={watchedAlreadyList}

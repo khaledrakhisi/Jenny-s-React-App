@@ -1,7 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-import { useState } from "react";
 import { config } from "../config/config";
+
+/**
+ *
+ * React intoduced Context API to manage the global state of your application.
+ * by using Context API you will inpower your application with a great tool to share the state throughout the entire application.
+ * and there is no need to pass props from parent to childs
+ */
 
 export const MoviesContext = React.createContext({
   watchList: [],
