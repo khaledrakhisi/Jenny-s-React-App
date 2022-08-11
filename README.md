@@ -7,11 +7,11 @@ App to keep track of your movie list
 ## Description
 
 The app has following specifications:
-- Tests
-- Sorting
-- No duplicate
-- No third-party design-systems used
-- Local storage
+- Tests.
+- Sorting.
+- No duplicate.
+- No third-party design-systems used.
+- Local storage.
 
 ## Getting Started
 
@@ -42,7 +42,7 @@ No live demo
 
 ## Styles and Design system
 
-Just SASS (Mobile-First approach).
+Just SASS.
 
 ### Installing Dependencies
 
